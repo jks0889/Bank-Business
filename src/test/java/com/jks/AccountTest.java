@@ -3,7 +3,9 @@ package com.jks;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.*;
 import static junit.framework.TestCase.assertEquals;
+import static org.hamcrest.CoreMatchers.is;
 
 public class AccountTest {
 
@@ -20,25 +22,25 @@ public class AccountTest {
 
     @Test
     public void testGetBalance() throws Exception {
-        assertEquals(10000, account.getBalance());
+        assertThat(10000, is(account.getBalance()));
 
         account = new Account(1000);
-        assertEquals(1000, account.getBalance());
+        assertThat(1000, is(account.getBalance()));
 
         account = new Account(0);
-        assertEquals(0, account.getBalance());
+        assertThat(0,is(account.getBalance()));
     }
 
     @Test
     public void testDeposit() throws  Exception{
         Account account = new Account(10000);
         account.deposit(1000);
-        assertEquals(11000,account.getBalance());
+        assertThat(11000,is(account.getBalance()));
     }
 
     @Test
     public void testWithdraw() throws  Exception{
         account.withdraw(1000);
-        assertEquals(9000,account.getBalance());
+        assertThat(9000,is(account.getBalance()));
     }
 }
