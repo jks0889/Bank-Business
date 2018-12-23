@@ -1,0 +1,10 @@
+# Directories #
+/build/
+/bin/
+target/
+.idea
+classes/
+META-INF/
+/out/
+/.gradle/
+/.idea/
